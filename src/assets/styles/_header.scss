@@ -1,0 +1,100 @@
+.header{
+    background-color: #fff;
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    height: 7rem;
+    // align-items: center;
+    display: flex;
+    box-shadow: 0 0px 1px 1px rgba(4,133,183, 0.07);
+    .nav{
+        width: 100%;
+        max-width: 120rem;
+        // background-color: #c00;
+        margin: 0 auto;
+    
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        padding: 0 2.4rem;
+        .left{
+            // background-color: aliceblue;
+            width: 100%;
+            display: flex;
+            .logo{
+                align-self: center;
+                &--img{
+                    height: 4rem;
+                    width: auto;
+                }
+            }
+        }
+        .right{
+            // background-color: #fef;
+            width: 100%;
+            display: flex;
+           justify-content: flex-end;
+           text-transform: uppercase;
+            align-self: center;
+
+            .menu{
+                align-self: center;
+                text-decoration: none;
+                list-style: none;
+                display: flex;
+                
+               li{
+                .link{
+                    color: $font-primary; 
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                    padding: 0 3rem; 
+                    height: 7rem;
+                    cursor: pointer;
+                    &.active{
+                        border-bottom: 3px solid $color-secondry;
+                    }
+                }
+               }
+            }
+            button{
+                display: none;
+            }
+            &.show{
+                display: flex;
+                transition: 0.8s all ease;
+            }
+            @include responsive(tab-land) {
+               button{
+                   display: flex;
+                //    text-decoration: none; 
+                   background: transparent;
+                   color: $font-primary;
+                   border: none;
+                   font-size: 4.0rem;
+                   line-height: inherit;
+                //    justify-content: center;
+               }
+               .menu{
+                   display: none;
+
+                   &.show{
+                    position: absolute;
+                    left: 0;
+                    top: 6rem;
+                    // height: 23rem;
+                    width: 100%;
+                    background-color:  #fff;
+                    display: flex;
+                    flex-direction: column;
+                }
+               }
+               
+            
+            }
+        }
+
+    }
+}
